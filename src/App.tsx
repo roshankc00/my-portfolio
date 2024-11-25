@@ -12,9 +12,11 @@ import 'aos/dist/aos.css';
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 500, // Significantly reduced for faster animations
       once: true,
-      easing: 'ease-in-out'
+      easing: 'ease-out',  // Changed to simple ease-out for snappier feel
+      delay: 0, // Removed delay completely
+      offset: 50 // Reduced offset further for earlier trigger
     });
   }, []);
 
