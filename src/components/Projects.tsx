@@ -12,7 +12,9 @@ import {
   SiMongodb,
   SiExpress,
   SiNextdotjs,
-  SiMapbox
+  SiMapbox,
+  SiSocketdotio,
+  SiTypescript
 } from 'react-icons/si';
 import { FaMicrochip, FaStore, FaGraduationCap, FaVideo, FaCreditCard, FaBook, FaUserShield, FaChalkboardTeacher, FaUniversity, FaAws, FaNetworkWired, FaCloud, FaDatabase, FaServer, FaTools, FaShieldAlt, FaTable, FaExternalLinkAlt } from 'react-icons/fa';
 import AOS from 'aos';
@@ -48,6 +50,7 @@ interface Project {
   management?: Management;
   backend?: Backend;
   website?: string;
+  image?: string;
 }
 
 const Projects: React.FC = () => {
@@ -202,6 +205,28 @@ const Projects: React.FC = () => {
   };
 
   const projects: Project[] = [
+    {
+      title: "FiveOne Dating App",
+      description: "A unique dating app that matches five male users with one female user in real-time chat rooms, featuring advanced matchmaking algorithms and WebSocket-based communication.",
+      image: "/projects/fiveone.png", 
+      website: "https://fiveone.app/",
+      github: "",  
+      technologies: [
+        { name: "NestJS", icon: <SiNestjs className="text-red-600" /> },
+        { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
+        { name: "WebSocket", icon: <SiSocketdotio className="text-blue-400" /> },
+        { name: "TypeScript", icon: <SiTypescript className="text-blue-400" /> },
+        { name: "Redis", icon: <SiRedis className="text-red-500" /> },
+      ],
+      features: [
+        "Real-time matchmaking system connecting 5 male users with 1 female user",
+        "Advanced WebSocket architecture for instant messaging and live updates",
+        "Role-based chat room management with special privileges for female users",
+        "Efficient MongoDB database design for user profiles and chat history",
+        "Redis-based caching for optimized performance",
+        "Scalable backend supporting thousands of concurrent users"
+      ]
+    },
     {
       title: 'Digital Class LMS Platform',
       description: 'A comprehensive Learning Management System similar to Udemy, built with NestJS and AWS services. Features include course management, video streaming, and real-time notifications.',

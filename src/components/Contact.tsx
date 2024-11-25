@@ -1,80 +1,103 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { toast, Toaster } from 'react-hot-toast';
 import { FaGithub, FaLinkedin, FaMedium, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const formRef = useRef<HTMLFormElement>(null);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
-  };
+    
+    if (!formRef.current) return;
+    
+    try {
+      setLoading(true);
+      
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+      toast.success('Message sent successfully!');
+      formRef.current.reset();
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast.error('Failed to send message. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-900">
+    <section id="contact" className="py-20 bg-gradient-to-b from-gray-900 to-gray-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-3xl font-bold text-white mb-4">Get In Touch</h2>
-          <p className="text-gray-400 mb-8">Feel free to reach out for collaborations or just a friendly hello</p>
+          <p className="text-gray-400">Feel free to reach out for collaborations or just a friendly hello</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Contact Form */}
           <div className="bg-gray-800 p-8 rounded-lg shadow-lg">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="space-y-6"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-400">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-300">
+                  Name
+                </label>
                 <input
                   type="text"
+                  name="user_name"
                   id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-blue-500 focus:ring-blue-500"
                   required
+                  className="mt-1 block w-full rounded-md bg-gray-800 border border-gray-700 text-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                 />
               </div>
+
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-400">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300">
+                  Email
+                </label>
                 <input
                   type="email"
+                  name="user_email"
                   id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-blue-500 focus:ring-blue-500"
                   required
+                  className="mt-1 block w-full rounded-md bg-gray-800 border border-gray-700 text-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                 />
               </div>
+
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-400">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-300">
+                  Message
+                </label>
                 <textarea
                   id="message"
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
                   rows={4}
-                  className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-blue-500 focus:ring-blue-500"
                   required
+                  className="mt-1 block w-full rounded-md bg-gray-800 border border-gray-700 text-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                 />
               </div>
-              <button
-                type="submit"
-                className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
-              >
-                Send Message
-              </button>
+
+              <div className="flex justify-center">
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {loading ? 'Sending...' : 'Send Message'}
+                </button>
+              </div>
             </form>
           </div>
 
@@ -128,6 +151,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <Toaster position="bottom-right" />
     </section>
   );
 };
