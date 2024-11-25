@@ -210,7 +210,6 @@ const Projects: React.FC = () => {
       description: "A unique dating app that matches five male users with one female user in real-time chat rooms, featuring advanced matchmaking algorithms and WebSocket-based communication.",
       image: "/projects/fiveone.png", 
       website: "https://fiveone.app/",
-      github: "",  
       technologies: [
         { name: "NestJS", icon: <SiNestjs className="text-red-600" /> },
         { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
