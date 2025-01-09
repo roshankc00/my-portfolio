@@ -1,40 +1,12 @@
-import React from 'react';
-import { FaBriefcase, FaCalendar, FaMapMarkerAlt, FaExternalLinkAlt } from 'react-icons/fa';
+import React from "react";
+import {
+  FaBriefcase,
+  FaCalendar,
+  FaMapMarkerAlt,
+  FaExternalLinkAlt,
+} from "react-icons/fa";
 
 const experiences = [
-  {
-    company: "FiveOne",
-    location: "Kathmandu",
-    position: "Backend Developer",
-    period: "Aug, 2024 - Present",
-    website: "https://fiveone.app/",
-    achievements: [
-      "Developed a matchmaking backend using NestJS and MongoDB to handle real-time user grouping, pairing, and chat management for a dating app",
-      "Implemented dynamic group logic, managing chat rooms with five male users and one female, including features for user participation, kicking, and re-matching",
-      "Built advanced pairing algorithms, ensuring one male and one female are matched from groups based on predefined rules and fallback mechanisms",
-      "Designed and optimized WebSocket architecture using Socket.IO for real-time updates, ensuring seamless user interactions with low latency",
-      "Implemented role-based user actions, enabling females to kick participants and trigger real-time group reshuffling and matchmaking events",
-      "Integrated chat persistence with MongoDB, storing message history and chat metadata for post-session analysis and continuity",
-      "Optimized database queries and WebSocket events to support thousands of simultaneous users, achieving high scalability and responsiveness"
-    ],
-    technologies: ["NestJS", "MongoDB", "WebSocket", "Socket.IO", "TypeScript"]
-  },
-  {
-    company: "Saral-Lagani",
-    location: "Kathmandu",
-    position: "MERN Dev",
-    period: "Nov, 2023 - Apr, 2024",
-    website: "https://www.sarallagani.com/",
-    achievements: [
-      "Worked on different features of the stock management system",
-      "Developed broker analytics website with Next.js",
-      "Built cross-platform mobile application using React Native",
-      "Implemented server-side functionality using Express.js",
-      "Successfully migrated 70% of codebase from React.js to Next.js 14",
-      "Developed promo-code influencer tracking system"
-    ],
-    technologies: ["Next.js", "React", "React Native", "Express.js", "SQL"]
-  },
   {
     company: "Freelancer",
     location: "Kathmandu",
@@ -52,9 +24,50 @@ const experiences = [
       "Implemented custom streaming platform using AWS services for scalability",
       "Collaborated with mobile and frontend teams, ensuring seamless integration",
       "Deployed scalable WebSocket servers with AWS EC2 machine and GitHub Actions",
-      "Integrated eSewa payment gateway for secure transactions"
+      "Integrated eSewa payment gateway for secure transactions",
     ],
-    technologies: ["Next.js", "React", "NestJS", "PostgreSQL", "AWS", "Azure"]
+    technologies: [
+      "Next.js",
+      "React",
+      "NestJS",
+      "PostgreSQL",
+      "AWS",
+      "Azure",
+      "Jest",
+    ],
+  },
+  {
+    company: "FiveOne",
+    location: "Kathmandu",
+    position: "Backend Developer",
+    period: "Aug, 2024 - Jan 2025",
+    website: "https://fiveone.app/",
+    achievements: [
+      "Developed a matchmaking backend using NestJS and MongoDB to handle real-time user grouping, pairing, and chat management for a dating app",
+      "Implemented dynamic group logic, managing chat rooms with five male users and one female, including features for user participation, kicking, and re-matching",
+      "Built advanced pairing algorithms, ensuring one male and one female are matched from groups based on predefined rules and fallback mechanisms",
+      "Designed and optimized WebSocket architecture using Socket.IO for real-time updates, ensuring seamless user interactions with low latency",
+      "Implemented role-based user actions, enabling females to kick participants and trigger real-time group reshuffling and matchmaking events",
+      "Integrated chat persistence with MongoDB, storing message history and chat metadata for post-session analysis and continuity",
+      "Optimized database queries and WebSocket events to support thousands of simultaneous users, achieving high scalability and responsiveness",
+    ],
+    technologies: ["NestJS", "MongoDB", "WebSocket", "Socket.IO", "TypeScript"],
+  },
+  {
+    company: "Saral-Lagani",
+    location: "Kathmandu",
+    position: "MERN Dev",
+    period: "Nov, 2023 - Apr, 2024",
+    website: "https://www.sarallagani.com/",
+    achievements: [
+      "Worked on different features of the stock management system",
+      "Developed broker analytics website with Next.js",
+      "Built cross-platform mobile application using React Native",
+      "Implemented server-side functionality using Express.js",
+      "Successfully migrated 70% of codebase from React.js to Next.js 14",
+      "Developed promo-code influencer tracking system",
+    ],
+    technologies: ["Next.js", "React", "React Native", "Express.js", "SQL"],
   },
 
   {
@@ -70,11 +83,17 @@ const experiences = [
       "Mastered advanced MongoDB Aggregation pipelines",
       "Collaborated with senior developers on real-world projects",
       "Implemented data validation using Zod",
-      "Worked with Redis for caching and performance optimization"
+      "Worked with Redis for caching and performance optimization",
     ],
-    technologies: ["Express.js", "TypeScript", "Redis", "MongoDB", "Zod", "Docker"]
+    technologies: [
+      "Express.js",
+      "TypeScript",
+      "Redis",
+      "MongoDB",
+      "Zod",
+      "Docker",
+    ],
   },
-
 ];
 
 const Experience = () => {
@@ -82,7 +101,9 @@ const Experience = () => {
     <section id="experience" className="py-20 bg-gray-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12" data-aos="fade-up">
-          <h2 className="text-3xl font-bold text-white mb-4">Professional Experience</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Professional Experience
+          </h2>
           <p className="text-gray-400">Building scalable solutions</p>
         </div>
 
@@ -96,7 +117,9 @@ const Experience = () => {
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">{exp.position}</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    {exp.position}
+                  </h3>
                   <div className="flex items-center text-gray-400 mb-2">
                     <FaBriefcase className="mr-2" />
                     <span className="text-lg">{exp.company}</span>
