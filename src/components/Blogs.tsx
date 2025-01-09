@@ -1,13 +1,13 @@
 const Blogs = () => {
   const blogPosts = [
     {
-      title: "Application Lifecycle in NestJS",
+      title: "Application Lifecycle & Request Response LifeCycle of Nest js",
       url: "https://medium.com/@rohitkc8848/application-lifecycle-request-response-lifecycle-of-nest-js-23cf9927fbd3",
       description:
         "An in-depth look at the application lifecycle in NestJS and how requests and responses are handled.",
     },
     {
-      title: "How I Scaled Web Socket Server",
+      title: "How I Scaled Web-Socket-Server ???",
       url: "https://medium.com/@rohitkc8848/how-i-scaled-web-socket-server-fa8faa8f89ad",
       description:
         "Learn about the strategies I used to scale a WebSocket server for better performance.",
@@ -19,7 +19,7 @@ const Blogs = () => {
         "Explore the SOLID design principles and how to implement them using TypeScript.",
     },
     {
-      title: "Learn How Dependency Injection Works",
+      title: "Learn All about Dependency Injection in Nest js",
       url: "https://medium.com/@rohitkc8848/learn-how-dependency-injection-works-a254b9d46db4",
       description:
         "A comprehensive guide to understanding dependency injection and its benefits.",
