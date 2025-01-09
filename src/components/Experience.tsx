@@ -11,7 +11,7 @@ const experiences = [
     company: "Freelancer",
     location: "Kathmandu",
     position: "Full Stack Developer",
-    period: "Apr, 2024 - Present",
+    period: "DEC, 2023 - Present",
     achievements: [
       "Built full stack Coupon store with modern tech stack",
       "Designed scalable PostgreSQL schema for efficient data retrieval and relationships",
