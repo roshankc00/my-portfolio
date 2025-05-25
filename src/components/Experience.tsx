@@ -8,9 +8,31 @@ import {
 
 const experiences = [
   {
+    company: "Xdezo Limited",
+    location: "London, Greater London",
+    position: "Full Stack Engineer",
+    period: "Jan, 2025 - Present",
+    achievements: [
+      "Built MVPs for clients using modern full-stack technologies, focusing on speed, scalability, and usability",
+      "Architected scalable and modular backend systems to support rapid development and future enhancements",
+      "Collaborated closely with designers, frontend, and data teams to ensure seamless integration and delivery",
+    ],
+    technologies: [
+      "Next.js",
+      "React",
+      "NestJS",
+      "PostgreSQL",
+      "AWS",
+      "MySql",
+      "React Query",
+      "TypeOrm",
+      "Redis",
+    ],
+  },
+  {
     company: "Freelancer",
     location: "Kathmandu",
-    position: "Full Stack Developer",
+    position: "Full Stack Engineer",
     period: "DEC, 2023 - Present",
     achievements: [
       "Built full stack Coupon store with modern tech stack",
