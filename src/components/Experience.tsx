@@ -10,12 +10,13 @@ const experiences = [
   {
     company: "Xdezo Limited",
     location: "London, Greater London",
-    position: "Full Stack Engineer",
+    position: "Tech Wingman",
     period: "Jan, 2025 - Present",
     achievements: [
       "Built MVPs for clients using modern full-stack technologies, focusing on speed, scalability, and usability",
       "Architected scalable and modular backend systems to support rapid development and future enhancements",
       "Collaborated closely with designers, frontend, and data teams to ensure seamless integration and delivery",
+      "Successfully orchestrated the deployment of a Dockerized application through a robust Continuous Integration (CI) pipeline, ensuring automated builds, tests, and seamless delivery to the target environment.",
     ],
     technologies: [
       "Next.js",
@@ -27,6 +28,8 @@ const experiences = [
       "React Query",
       "TypeOrm",
       "Redis",
+      "Bull MQ",
+      "Docker",
     ],
   },
   {
