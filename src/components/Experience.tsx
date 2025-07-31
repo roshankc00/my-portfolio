@@ -10,13 +10,15 @@ const experiences = [
   {
     company: "Xdezo Limited",
     location: "London, Greater London",
-    position: "Tech Wingman",
+    position: "Product Engineer",
     period: "Jan, 2025 - Present",
     achievements: [
-      "Built MVPs for clients using modern full-stack technologies, focusing on speed, scalability, and usability",
-      "Architected scalable and modular backend systems to support rapid development and future enhancements",
-      "Collaborated closely with designers, frontend, and data teams to ensure seamless integration and delivery",
-      "Successfully orchestrated the deployment of a Dockerized application through a robust Continuous Integration (CI) pipeline, ensuring automated builds, tests, and seamless delivery to the target environment.",
+      "Delivered MVPs for clients utilizing modern full-stack technologies with a strong emphasis on speed, scalability, and user experience.",
+      "Led the engineering team with a clear focus on MVP development and project execution.",
+      "Directed and managed the full software development lifecycle, ensuring timely and high-quality delivery.",
+      "Designed and architected scalable, modular backend systems to facilitate rapid development and accommodate future growth.",
+      "Collaborated effectively with designers, frontend developers, and data teams to ensure seamless integration and cohesive product delivery.",
+      "Successfully implemented and managed the deployment of Dockerized applications via a robust Continuous Integration (CI) pipeline, enabling automated builds, and reliable delivery to production and staging environments.",
     ],
     technologies: [
       "Next.js",
